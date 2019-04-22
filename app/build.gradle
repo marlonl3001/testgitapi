@@ -1,0 +1,84 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+
+    androidExtensions {
+        experimental = true
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    defaultConfig {
+        applicationId "br.com.madeiramadeira.eagleapp"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    androidTestImplementation "androidx.test:runner:$rootProject.runnerVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
+    annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:$rootProject.dbflowVersion"
+    api 'com.google.android.material:material:1.1.0-alpha05'
+    testImplementation "junit:junit:$rootProject.junitVersion"
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0-alpha04'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.kotlinVersion"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1'
+
+    implementation "android.arch.navigation:navigation-fragment-ktx:$rootProject.navigationVersion"
+    implementation "android.arch.navigation:navigation-ui-ktx:$rootProject.navigationVersion"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    //implementation 'androidx.multidex:multidex:2.0.1'
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
+
+    implementation "com.github.Raizlabs.DBFlow:dbflow-core:$rootProject.dbflowVersion"
+    implementation "com.github.Raizlabs.DBFlow:dbflow:$rootProject.dbflowVersion"
+    implementation "com.github.Raizlabs.DBFlow:dbflow-kotlinextensions:$rootProject.dbflowVersion"
+
+    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
+
+    implementation "com.squareup.picasso:picasso:$rootProject.picassoVersion"
+
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    //implementation 'org.jsoup:jsoup:1.10.2'
+
+}
+
+/*
+*
+*   Exibir um campo de busca para que o usuário digite o termo a ser buscado.
+    Executar as consultas à API do Github no seguinte endpoint: https://api.github.com/search/repositories?q=[termo]
+    Exibir os resultados da busca em forma de listagem (resumidamente)
+    Ao abrir um item do resultado da busca, exibir mais informações daquele item.
+    Persistir os resultados localmente a fim de que sejam acessíveis offline.
+    Implementar testes unitários
+    Bônus: implementar paginação (parâmetros page e per_page, ex:
+    https://api.github.com/search/repositories?q=android&per_page=100&page=2
+*
+* */

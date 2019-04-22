@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Teste Git API</string>
+    <string name="content_description">Image</string>
+</resources>

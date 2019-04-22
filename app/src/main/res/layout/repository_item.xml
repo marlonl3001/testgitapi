@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+                name="repository"
+                type="br.com.mdr.testegitapi.model.Repository"/>
+
+        <variable
+                name="clickListener"
+                type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_margin"
+            android:padding="@dimen/card_padding">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/txtRepository"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_margin"
+                    android:layout_marginEnd="@dimen/card_margin"
+                    android:text="@{repository.description}"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorRepositoryTitle"
+                    android:textSize="@dimen/text_size_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                    android:id="@+id/txtDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{repository.owner.login}"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/secondary_text_light"
+                    android:textSize="@dimen/text_size_subtitle"
+                    app:layout_constraintStart_toStartOf="@id/txtRepository"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtRepository"/>
+
+            <TextView
+                    android:id="@+id/txtDev"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{repository.owner.login}"
+                    android:textColor="@android:color/secondary_text_dark"
+                    android:textSize="@dimen/text_size_subtitle"
+                    app:layout_constraintStart_toStartOf="@id/txtRepository"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtDescription"/>
+
+            <TextView
+                    android:id="@+id/txtLanguage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{repository.language}"
+                    android:textColor="@android:color/secondary_text_dark"
+                    android:textSize="@dimen/text_size_subtitle"
+                    app:layout_constraintStart_toStartOf="@id/txtRepository"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtDev"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
