@@ -14,10 +14,6 @@ class MainViewModel : ViewModel() {
     var repositoryFilter = MutableLiveData<String>()
     var isLoading = MutableLiveData<Boolean>()
 
-    init {
-        loadReposotories()
-    }
-
     fun loadReposotories() {
         val filter = if (repositoryFilter.value.isNullOrEmpty()) "android" else repositoryFilter.value
         Api.getRepositories(filter!!).enqueue(object : Callback<GitResult> {

@@ -55,4 +55,9 @@ class MainFragment : Fragment() {
             binding.isLoading = result
         })
     }
+
+    override fun onStart() {
+        super.onStart()
+        vm.load()
+    }
 }

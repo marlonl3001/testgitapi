@@ -40,7 +40,7 @@ dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0-alpha04'
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.kotlinVersion"
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1'
@@ -51,16 +51,12 @@ dependencies {
     //implementation 'androidx.multidex:multidex:2.0.1'
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
     implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion"
-    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
 
     implementation "com.github.Raizlabs.DBFlow:dbflow-core:$rootProject.dbflowVersion"
     implementation "com.github.Raizlabs.DBFlow:dbflow:$rootProject.dbflowVersion"
     implementation "com.github.Raizlabs.DBFlow:dbflow-kotlinextensions:$rootProject.dbflowVersion"
 
     implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
-
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
-    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
 
     implementation "com.squareup.picasso:picasso:$rootProject.picassoVersion"
 
