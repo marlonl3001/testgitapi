@@ -52,14 +52,14 @@ class MainActivity : AppCompatActivity(), LifecycleOwner {
 
             override fun onQueryTextSubmit(query: String?): Boolean {
                 if (!query.isNullOrEmpty())
-                    mainViewModel!!.loadRepositories(query, false)
+                    mainViewModel!!.loadRepositories(query)
                 return true
             }
         })
 
         searchView.setOnSearchViewListener(object : MaterialSearchView.SearchViewListener {
             override fun onSearchViewClosed() {
-                mainViewModel!!.loadRepositories(isPaging = false)
+                mainViewModel!!.loadRepositories()
             }
 
             override fun onSearchViewShown() {

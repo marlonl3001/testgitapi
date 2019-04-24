@@ -70,7 +70,7 @@ class MainFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        vm.loadRepositories(isPaging = false)
+        vm.loadRepositories()
 
     }
 }

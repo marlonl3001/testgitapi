@@ -10,11 +10,11 @@ import java.io.Serializable
  */
 
 @Entity
-class Owner(
+class Owner : Serializable {
     @PrimaryKey(autoGenerate = true)
-    var OwnerId: Int,
-    @SerializedName("avatar_url") var avatarUrl: String,
-    var login: String,
-    @SerializedName("html_url") var htmlUrl: String?,
-    var reposUrl: String?
-): Serializable
+    var OwnerId: Int = 0
+    @SerializedName("avatar_url") var avatarUrl: String = ""
+    var login: String = ""
+    @SerializedName("html_url") var htmlUrl: String? = ""
+    var reposUrl: String = ""
+}

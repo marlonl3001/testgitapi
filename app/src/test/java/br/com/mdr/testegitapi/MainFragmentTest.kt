@@ -1,45 +1,50 @@
 package br.com.mdr.testegitapi.model
 
+import br.com.mdr.testegitapi.extensions.convertDate
+import br.com.mdr.testegitapi.extensions.sizePage
 import org.junit.Test
 
 import org.junit.Assert.*
-
+import org.junit.runner.RunWith
+import org.junit.runners.JUnit4
 /**
  * Created by Marlon D. Rocha on 22/04/2019.
  */
 
+@RunWith(JUnit4::class)
 class MainFragmentTest {
 
     @Test
     fun checkExistLanguage() {
-        val item:items = items()
-        item.language = "Kotlin"
-        assertTrue(item.checklanguage())
+        val repository = Repository()
+        repository.language = "Kotlin"
+        assertTrue(repository.checklanguage())
     }
+
     @Test
     fun checkNotExistLanguage() {
-        val item:items = items()
-        assertFalse(item.checklanguage())
+        val repository = Repository()
+        assertFalse(repository.checklanguage())
     }
 
     @Test
     fun checkExisHomePage() {
-        val item:items = items()
-        item.homepage = "www.teste.com.br"
-        assertTrue(item.checkHomepage())
+        val repository = Repository()
+        repository.homepage = "www.teste.com.br"
+        assertTrue(repository.checkHomepage())
     }
     @Test
     fun checkNotExisHomePage() {
-        val item:items = items()
-        assertFalse(item.checkHomepage())
+        val repository = Repository()
+        assertFalse(repository.checkHomepage())
     }
 
     @Test
     fun checkSizePage() {
-        val item:items = items()
-        val list:MutableList<Repository> = ArrayList<Repository>()
+        val repository = Repository()
+        val list:MutableList<Repository> = ArrayList()
         for (i in 0..4){
-            list.add(item)
+            list.add(repository)
         }
         assertTrue(sizePage(list) > 0)
     }

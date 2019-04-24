@@ -23,26 +23,27 @@ class MainViewModel : ViewModel() {
     var isLoading = MutableLiveData<Boolean>()
     lateinit var repositoryDao: RepositoryDAO
     private var actualPage = 1
+    private val pageSize = "10"
 
-    fun loadRepositories(filter: String = "", isPaging: Boolean) {
+    fun loadRepositories(filter: String = "") {
         doAsync {
             repositoryDao = DatabaseManager.getRepositoryDAO()
             val qtd = repositoryDao.findQtd()
             val hasRegister = qtd > 0
-            if (hasRegister && filter.isEmpty() && !isPaging) {
+            if (hasRegister && filter.isEmpty() && actualPage == 1) {
                 isLoading.postValue(false)
                 val reps = repositoryDao.findAll()
                 repositories.postValue(reps)
                 actualPage = sizePage(repositories.value!!)
             } else {
                 val queryFilter = if (filter.isEmpty()) "android" else filter
-                Api.getRepositories(queryFilter, "15", actualPage.toString()).enqueue(object : Callback<GitResult> {
+                Api.getRepositories(queryFilter, pageSize, actualPage.toString()).enqueue(object : Callback<GitResult> {
                     override fun onResponse(call: Call<GitResult>, response: Response<GitResult>) {
                         if (response.isSuccessful) {
 
                             val resp: MutableList<Repository>?
 
-                            if (!isPaging)
+                            if (actualPage == 1)
                                 resp = response.body()!!.repositories
                             else {
                                 resp = repositories.value
@@ -79,7 +80,7 @@ class MainViewModel : ViewModel() {
                 val layoutManager = recyclerView.layoutManager as LinearLayoutManager
                 val qtdItens = repositories.value!!.size
                 if (qtdItens == layoutManager.findLastCompletelyVisibleItemPosition() + 1) {
-                    loadRepositories(isPaging = true)
+                    loadRepositories()
                 }
             }
         }
