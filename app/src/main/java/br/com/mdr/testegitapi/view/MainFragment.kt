@@ -39,6 +39,7 @@ class MainFragment : Fragment() {
         val binding = MainFragmentBinding.inflate(inflater, container, false)
         vm.isLoading.postValue(true)
         addObservers(binding)
+        App.activity!!.setToolbarTitle(getString(R.string.app_name))
         return binding.root
     }
 

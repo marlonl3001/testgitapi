@@ -1,6 +1,7 @@
 package br.com.mdr.testegitapi.adapter
 
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,41 +11,37 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.mdr.testegitapi.R
 import br.com.mdr.testegitapi.databinding.RepositoryItemBinding
 import br.com.mdr.testegitapi.interfaces.AdapterItemsContract
-import br.com.mdr.testegitapi.model.LanguageColor
 import br.com.mdr.testegitapi.model.Repository
+import kotlinx.android.synthetic.main.repository_item.view.*
+import org.json.JSONObject
 
 /**
  * Created by Marlon D. Rocha on 22/04/2019.
  */
 class RepositoryAdapter(var repositories: List<Repository>?, var context: Context): RecyclerView.Adapter<RepositoryAdapter.RepositoryViewHolder>(),
     AdapterItemsContract {
-
-    private var languageColors = ArrayList<LanguageColor>()
+    private var jsonColors: JSONObject? = null
 
     init {
         setLanguageColors()
     }
 
     private fun setLanguageColors() {
-        /*val jsonString: String
+        val jsonString: String
         try {
             val inputStream = context.assets.open("language_colors.json")
-            val size = inputStream?.available()
-            val buffer = ByteArray(size!!)
+            val size = inputStream.available()
+            val buffer = ByteArray(size)
             with(inputStream, {
                 read(buffer)
                 close()
             })
             jsonString = String(buffer)
-            val json: JsonObject = Parser().parse(jsonString) as JsonObject
-
-            for (item in json.map)
-                println("KEY: ${item.key} -- VALUE: ${item.value}")
+            jsonColors = JSONObject(jsonString)
 
         } catch(e: Exception) {
             e.printStackTrace()
-        }*/
-        //TODO: Criar rotina para ler as cores das linguagens
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepositoryViewHolder {
@@ -62,6 +59,13 @@ class RepositoryAdapter(var repositories: List<Repository>?, var context: Contex
 
     override fun onBindViewHolder(holder: RepositoryViewHolder, position: Int) {
         val repository = repositories!![position]
+        val language = repository.language
+
+        if (!language.isNullOrEmpty()) {
+            val stringColor = jsonColors!![language] as String
+            val languageColor = Color.parseColor(stringColor)
+            holder.itemView.viewLanguageColor.setCardBackgroundColor(languageColor)
+        }
         holder.bind(repository, onRepositoryClickListener(repository))
     }
 
@@ -69,6 +73,7 @@ class RepositoryAdapter(var repositories: List<Repository>?, var context: Contex
         fun bind(repository: Repository, listener: View.OnClickListener) {
             binding.repository = repository
             binding.clickListener = listener
+            binding.hasLanguage = !repository.language.isNullOrEmpty()
         }
     }
 

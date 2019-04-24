@@ -17,13 +17,13 @@ class Repository: Serializable {
     var id: Int = 0
     var name: String = ""
     @SerializedName("full_name") var fullName: String = ""
-    var description: String = ""
-    var homepage: String = ""
+    var description: String? = ""
+    var homepage: String? = ""
     @SerializedName("created_at") var createdAt: String = ""
     @SerializedName("updated_at") var updatedAt: String = ""
     @Embedded var owner: Owner = Owner()
-    var language: String = ""
-    var repository: String = ""
+    var language: String? = ""
+    var repository: String? = ""
 
     fun getCreateDate(): String {
         return convertDate(createdAt)

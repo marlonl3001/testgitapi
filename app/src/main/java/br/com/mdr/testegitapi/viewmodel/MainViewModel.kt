@@ -13,6 +13,7 @@ import br.com.mdr.testegitapi.extensions.sizePage
 import br.com.mdr.testegitapi.model.GitResult
 import br.com.mdr.testegitapi.model.Repository
 import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.uiThread
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -34,7 +35,7 @@ class MainViewModel : ViewModel() {
                 isLoading.postValue(false)
                 val reps = repositoryDao.findAll()
                 repositories.postValue(reps)
-                actualPage = sizePage(repositories.value!!)
+                uiThread { actualPage = sizePage(repositories.value!!) }
             } else {
                 val queryFilter = if (filter.isEmpty()) "android" else filter
                 Api.getRepositories(queryFilter, pageSize, actualPage.toString()).enqueue(object : Callback<GitResult> {

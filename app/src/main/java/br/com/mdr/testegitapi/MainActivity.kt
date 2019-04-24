@@ -72,9 +72,13 @@ class MainActivity : AppCompatActivity(), LifecycleOwner {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         searchView.visibility = View.GONE
-        toolbar.setTitle(title)
+        setToolbarTitle(title)
         showMenu = false
         invalidateOptionsMenu()
+    }
+
+    fun setToolbarTitle(title: String) {
+        toolbar.setTitle(title)
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
