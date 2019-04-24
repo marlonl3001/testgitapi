@@ -4,4 +4,5 @@
     <dimen name="card_padding">8dp</dimen>
     <dimen name="text_size_title">16sp</dimen>
     <dimen name="text_size_subtitle">12sp</dimen>
+    <dimen name="margin16">16dp</dimen>
 </resources>

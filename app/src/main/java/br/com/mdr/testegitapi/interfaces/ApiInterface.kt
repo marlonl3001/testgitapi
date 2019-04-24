@@ -9,7 +9,8 @@ import retrofit2.http.*
  */
 interface ApiInterface {
     @GET("search/repositories")
-    fun getRepositories(@Query("q") query: String): Call<GitResult>
+    fun getRepositories(@Query("q") query: String, @Query("per_page") perPage: String,
+                        @Query("page") page: String): Call<GitResult>
 
 
 }

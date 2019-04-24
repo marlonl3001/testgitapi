@@ -16,5 +16,6 @@ object Api {
             return adapter!!.create(ApiInterface::class.java)
         }
 
-    fun getRepositories(query: String): Call<GitResult> = api.getRepositories(query)
+    fun getRepositories(query: String, perPage: String, page: String): Call<GitResult> = api.getRepositories(query,
+        perPage, page)
 }

@@ -17,19 +17,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/card_margin"
-            android:padding="@dimen/card_padding">
+            android:onClick="@{clickListener}">
 
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:padding="@dimen/card_padding">
 
             <TextView
                     android:id="@+id/txtRepository"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/card_margin"
-                    android:layout_marginEnd="@dimen/card_margin"
-                    android:text="@{repository.description}"
+                    android:text="@{repository.fullName}"
                     android:textStyle="bold"
                     android:textColor="@color/colorRepositoryTitle"
                     android:textSize="@dimen/text_size_title"
@@ -41,35 +40,33 @@
                     android:id="@+id/txtDescription"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@{repository.owner.login}"
+                    android:text="@{repository.description}"
                     android:textStyle="bold"
-                    android:textColor="@android:color/secondary_text_light"
-                    android:textSize="@dimen/text_size_subtitle"
-                    app:layout_constraintStart_toStartOf="@id/txtRepository"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/txtRepository"/>
-
-            <TextView
-                    android:id="@+id/txtDev"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@{repository.owner.login}"
                     android:textColor="@android:color/secondary_text_dark"
                     android:textSize="@dimen/text_size_subtitle"
                     app:layout_constraintStart_toStartOf="@id/txtRepository"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/txtDescription"/>
+                    app:layout_constraintTop_toBottomOf="@id/txtRepository"/>
+            
+            <View
+                    android:id="@+id/viewLanguageColor"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/circle"
+                    app:layout_constraintStart_toStartOf="@id/txtRepository"
+                    app:layout_constraintTop_toTopOf="@id/txtLanguage"
+                    app:layout_constraintBottom_toBottomOf="@id/txtLanguage"/>
 
             <TextView
                     android:id="@+id/txtLanguage"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_margin"
                     android:text="@{repository.language}"
                     android:textColor="@android:color/secondary_text_dark"
-                    android:textSize="@dimen/text_size_subtitle"
-                    app:layout_constraintStart_toStartOf="@id/txtRepository"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/txtDev"/>
+                    android:textSize="@dimen/text_size_title"
+                    app:layout_constraintStart_toEndOf="@id/viewLanguageColor"
+                    app:layout_constraintTop_toBottomOf="@id/txtDescription"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

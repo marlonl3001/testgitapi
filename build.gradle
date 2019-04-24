@@ -10,7 +10,6 @@ buildscript {
         // App dependencies
         coreTestingVersion = '2.0.0'
         constraintLayoutVersion = '2.0.0-alpha3'
-        dbflowVersion = '4.2.4'
         espressoVersion = '3.1.0-alpha4'
         gplayVersion = '16.0.0'
         gradleVersion = '3.3.2'
@@ -20,7 +19,8 @@ buildscript {
         lifecycleVersion = '2.1.0-alpha02'
         navigationVersion = '1.0.0-alpha09'
         picassoVersion = '2.5.2'
-        recyclerViewVersion = '1.0.0'
+        recyclerViewVersion = '1.0.0.alpha-04'
+        roomVersion = "2.1.0-alpha06"
         runnerVersion = '1.1.0-alpha4'
         supportV4Version = '28.0.0'
     }
