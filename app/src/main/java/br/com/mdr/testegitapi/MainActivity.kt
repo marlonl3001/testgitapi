@@ -9,11 +9,8 @@ import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LifecycleRegistry
-import br.com.mdr.testegitapi.extensions.setupToolbar
-import br.com.mdr.testegitapi.view.MainFragment
 import br.com.mdr.testegitapi.viewmodel.MainViewModel
 import com.miguelcatalan.materialsearchview.MaterialSearchView
-import kotlinx.android.synthetic.main.toolbar.*
 
 class MainActivity : AppCompatActivity(), LifecycleOwner {
     private val lifecycleRegistry = LifecycleRegistry(this)
@@ -89,6 +86,10 @@ class MainActivity : AppCompatActivity(), LifecycleOwner {
                 searchView.visibility = View.VISIBLE
                 supportActionBar!!.setDisplayHomeAsUpEnabled(false)
                 onBackPressed()
+                return true
+            }
+            R.id.item_config -> {
+
                 return true
             }
         }

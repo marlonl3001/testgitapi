@@ -37,7 +37,7 @@ class DetailFragment : Fragment() {
     private fun addObservers(binding: DetailFragmentBinding) {
         vm.repository.observe(viewLifecycleOwner, Observer { result ->
             binding.repository = result
-            binding.hasLanguage = !result.homepage.isNullOrEmpty()
+            binding.hasSite = !result.homepage.isNullOrEmpty()
             binding.hasLanguage = !result.language.isNullOrEmpty()
             imgOwner.loadWith(result.owner.avatarUrl)
         })
