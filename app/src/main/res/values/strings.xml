@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">Teste Git API</string>
-    <string name="content_description">Image</string>
-    <string name="search_repository">Search repository</string>
+    <string name="app_name">Git Repos</string>
+    <string name="search">Buscar por repo ou autor</string>
+    <string name="created_at">Criado em:</string>
+    <string name="updated_at">Atualizado em:</string>
+    <string name="language">Linguagem:</string>
+    <string name="site">Site:</string>
+    <string name="sort">Sort</string>
 </resources>

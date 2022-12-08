@@ -1,91 +1,79 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs'
+}
 
-apply plugin: 'kotlin-android'
-
-apply plugin: 'kotlin-android-extensions'
-
-apply plugin: 'kotlin-kapt'
+apply from: "$rootDir/tools/versions.gradle"
 
 android {
-    compileSdkVersion rootProject.compileSdkVersion
-    useLibrary 'android.test.runner'
-    androidExtensions {
-        experimental = true
-    }
-
-    dataBinding {
-        enabled = true
-    }
+    compileSdkVersion deps.version.compileSdk
+    buildToolsVersion deps.version.sdkBuildTools
 
     defaultConfig {
-        applicationId "br.com.madeiramadeira.eagleapp"
-        minSdkVersion rootProject.minSdkVersion
-        targetSdkVersion rootProject.targetSdkVersion
+        applicationId "br.com.mdr.gitrepositories"
+        minSdk deps.version.minSdk
+        targetSdk deps.version.targetSdk
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding = true
+    }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 }
 
 dependencies {
-    androidTestImplementation "androidx.test:runner:$rootProject.runnerVersion"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
 
-    api 'com.google.android.material:material:1.1.0-alpha05'
-    testImplementation "junit:junit:$rootProject.junitVersion"
+    implementation deps.androidx.appcompat
+    implementation deps.androidx.constraint_layout
+    implementation deps.androidx.navigation_fragment
+    implementation deps.androidx.navigation_ui
+    implementation deps.androidx.recyclerview
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    //implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0'
-    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
+    implementation deps.material.runtime
 
-    implementation "android.arch.navigation:navigation-fragment-ktx:$rootProject.navigationVersion"
-    implementation "android.arch.navigation:navigation-ui-ktx:$rootProject.navigationVersion"
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+    implementation deps.okhttp.runtime
+    implementation deps.okhttp.logging
 
-    //Paging
-    implementation "androidx.paging:paging-runtime:2.1.0"
-    implementation "androidx.paging:paging-rxjava2:2.1.0"
+    implementation deps.others.gson
 
-    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion"
+    implementation deps.coroutines.android
 
-    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
+    //retrofit
+    implementation deps.retrofit.runtime
+    implementation deps.retrofit.gson
 
-    //SearchView
-    implementation 'com.miguelcatalan:materialsearchview:1.4.0'
+    //Glide
+    api deps.glide.runtime
+    api deps.glide.compiler
 
-    implementation "com.squareup.picasso:picasso:$rootProject.picassoVersion"
+    //Room
+    implementation "androidx.room:room-ktx:2.4.3"
+    kapt "androidx.room:room-compiler:2.4.3"
 
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
-
-    implementation "androidx.room:room-runtime:$rootProject.roomVersion"
-
-    //Anko
-    implementation 'org.jetbrains.anko:anko-commons:0.10.0'
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.kotlinVersion"
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1'
-
-    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
-
+    implementation project(path: ":base")
+    implementation project(path: ":test")
 }
-
-/*
-*
-*   Exibir um campo de busca para que o usuário digite o termo a ser buscado.
-    Executar as consultas à API do Github no seguinte endpoint: https://api.github.com/search/repositories?q=[termo]
-    Exibir os resultados da busca em forma de listagem (resumidamente)
-    Ao abrir um item do resultado da busca, exibir mais informações daquele item.
-    Persistir os resultados localmente a fim de que sejam acessíveis offline.
-    Implementar testes unitários
-    Bônus: implementar paginação (parâmetros page e per_page, ex:
-    https://api.github.com/search/repositories?q=android&per_page=100&page=2
-*
-* */

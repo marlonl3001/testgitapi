@@ -1,93 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
-                name="repository"
-                type="br.com.mdr.testegitapi.model.Repository"/>
+            name="repository"
+            type="br.com.mdr.base.domain.GitRepository"/>
 
         <variable
-                name="clickListener"
-                type="android.view.View.OnClickListener" />
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
         
         <variable
-                name="hasLanguage"
-                type="Boolean"/>
+            name="hasLanguage"
+            type="Boolean"/>
 
         <import type="android.view.View"/>
     </data>
 
     <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/card_margin"
-            android:onClick="@{clickListener}">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{clickListener}">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin16">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgOwner"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                app:circleImageUrl="@{repository.owner.avatarUrl}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtRepository"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/card_padding">
+                android:layout_marginStart="@dimen/margin8"
+                android:text="@{repository.owner.login}"
+                android:textStyle="bold"
+                android:textColor="@color/colorRepositoryTitle"
+                android:textSize="@dimen/font16"
+                app:layout_constraintBottom_toBottomOf="@id/imgOwner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imgOwner"
+                app:layout_constraintTop_toTopOf="@id/imgOwner"
+                tools:text="Repository Name"/>
 
-            <TextView
-                    android:id="@+id/txtRepository"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@{repository.fullName}"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorRepositoryTitle"
-                    android:textSize="@dimen/text_size_title"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtOwner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{repository.fullName}"
+                android:textStyle="bold"
+                android:textSize="@dimen/font16"
+                app:layout_constraintStart_toStartOf="@id/imgOwner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgOwner"
+                tools:text="Owner"/>
 
-            <TextView
-                    android:id="@+id/txtDescription"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@{repository.description}"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/secondary_text_dark"
-                    android:textSize="@dimen/text_size_subtitle"
-                    app:layout_constraintStart_toStartOf="@id/txtRepository"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/txtRepository"/>
-            
-            <!--<ImageView-->
-                    <!--android:id="@+id/viewLanguageColor"-->
-                    <!--android:contentDescription="@string/content_description"-->
-                    <!--android:layout_width="15dp"-->
-                    <!--android:layout_height="15dp"-->
-                    <!--android:background="@drawable/circle"-->
-                    <!--app:layout_constraintStart_toStartOf="@id/txtRepository"-->
-                    <!--app:layout_constraintTop_toTopOf="@id/txtLanguage"-->
-                    <!--app:layout_constraintBottom_toBottomOf="@id/txtLanguage"-->
-                    <!--android:tint="@color/colorRepositoryTitle"-->
-                    <!--android:visibility="@{hasLanguage ? View.VISIBLE : View.GONE}"/>-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/margin8"
+                android:text="@{repository.description}"
+                android:textSize="@dimen/font12"
+                app:layout_constraintStart_toStartOf="@id/txtOwner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtOwner"
+                tools:text="Repository Description that is showed with a resume of repository technologies."/>
 
             <androidx.cardview.widget.CardView
-                    android:id="@+id/viewLanguageColor"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:visibility="@{hasLanguage ? View.VISIBLE : View.GONE}"
-                    app:cardCornerRadius="7dp"
-                    app:cardElevation="0dp"
-                    app:layout_constraintStart_toStartOf="@id/txtRepository"
-                    app:layout_constraintTop_toTopOf="@id/txtLanguage"
-                    app:layout_constraintBottom_toBottomOf="@id/txtLanguage"/>
+                android:id="@+id/viewLanguageColor"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                app:cardBackgroundColor="#A97BFF"
+                app:gone="@{hasLanguage}"
+                app:cardCornerRadius="7dp"
+                app:cardElevation="0dp"
+                app:layout_constraintStart_toStartOf="@id/imgOwner"
+                app:layout_constraintTop_toTopOf="@id/txtLanguage"
+                app:layout_constraintBottom_toBottomOf="@id/txtLanguage"/>
 
-            <TextView
-                    android:id="@+id/txtLanguage"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/card_margin"
-                    android:text="@{repository.language}"
-                    android:textColor="@android:color/secondary_text_dark"
-                    android:textSize="@dimen/text_size_title"
-                    app:layout_constraintStart_toEndOf="@id/viewLanguageColor"
-                    app:layout_constraintTop_toBottomOf="@id/txtDescription"
-                    android:visibility="@{hasLanguage ? View.VISIBLE : View.GONE}"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtLanguage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin8"
+                android:text="@{repository.language}"
+                android:textSize="@dimen/font16"
+                app:layout_constraintStart_toEndOf="@id/viewLanguageColor"
+                app:layout_constraintTop_toBottomOf="@id/txtDescription"
+                app:gone="@{hasLanguage}"
+                tools:text="Kotlin"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtStars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin8"
+                android:text="@{repository.stars}"
+                app:drawableStartCompat="@drawable/ic_star"
+                android:drawablePadding="@dimen/margin4"
+                app:layout_constraintStart_toStartOf="@id/viewLanguageColor"
+                app:layout_constraintTop_toBottomOf="@id/viewLanguageColor"
+                tools:text="26 stars"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtForks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin8"
+                android:text="@{repository.forks}"
+                app:drawableStartCompat="@drawable/ic_fork"
+                android:drawablePadding="@dimen/margin4"
+                app:layout_constraintStart_toStartOf="@id/txtStars"
+                app:layout_constraintTop_toBottomOf="@id/txtStars"
+                tools:text="26 stars"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

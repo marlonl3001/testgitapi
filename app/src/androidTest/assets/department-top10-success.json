@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Tv e Vídeo",
+    "departments": [
+
+    ],
+    "imageThumb": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820496",
+    "imageHeader": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820680"
+  },
+  {
+    "id": 13,
+    "name": "Eletrodomésticos",
+    "departments": [
+
+    ],
+    "imageThumb": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820490",
+    "imageHeader": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820674"
+  },
+  {
+    "id": 29,
+    "name": "Câmeras, Filmadoras e Drones",
+    "departments": [
+
+    ],
+    "imageThumb": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820489",
+    "imageHeader": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820673"
+  },
+  {
+    "id": 38,
+    "name": "Telefones e Celulares",
+    "departments": [
+
+    ],
+    "imageThumb": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820495",
+    "imageHeader": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820679"
+  },
+  {
+    "id": 56,
+    "name": "Informática",
+    "departments": [
+
+    ],
+    "imageThumb": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820493",
+    "imageHeader": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820677"
+  },
+  {
+    "id": 73,
+    "name": "Eletroportáteis",
+    "departments": [
+
+    ],
+    "imageThumb": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820491",
+    "imageHeader": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820675"
+  },
+  {
+    "id": 93,
+    "name": "Móveis",
+    "departments": [
+
+    ],
+    "imageThumb": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820494",
+    "imageHeader": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820678"
+  },
+  {
+    "id": 102,
+    "name": "Beleza e Saúde",
+    "departments": [
+
+    ],
+    "imageThumb": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820488",
+    "imageHeader": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820672"
+  },
+  {
+    "id": 336,
+    "name": "Games",
+    "departments": [
+
+    ],
+    "imageThumb": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820492",
+    "imageHeader": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820676"
+  },
+  {
+    "id": 371,
+    "name": "Utilidades Domésticas",
+    "departments": [
+
+    ],
+    "imageThumb": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820497",
+    "imageHeader": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820681"
+  }
+]

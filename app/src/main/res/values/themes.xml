@@ -1,0 +1,26 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.GitRepositories" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimaryContainer">@color/white</item>
+        <item name="android:textColor">@color/textPrimary</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="SectionTextStyle" parent="@android:style/Widget.TextView">
+        <item name="android:paddingVertical">@dimen/margin16</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/font18</item>
+    </style>
+
+    <style name="Theme.Toolbar" parent="Theme.GitRepositories">
+        <!--This line changes the color of text in Toolbar-->
+        <item name="android:textColorPrimary">@color/white</item>
+        <!--This line changes the color of icons in toolbar (back, overflow menu icons)-->
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+
+</resources>

@@ -1,0 +1,281 @@
+[
+  {
+    "id": 1,
+    "name": "TV e Vídeo",
+    "departments": [
+
+    ],
+    "imageThumb": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820496",
+    "imageHeader": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820680"
+  },
+  {
+    "id": 13,
+    "name": "Eletrodomésticos",
+    "departments": [
+
+    ],
+    "imageThumb": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820490",
+    "imageHeader": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820674"
+  },
+  {
+    "id": 29,
+    "name": "Câmeras, Filmadoras e Drones",
+    "departments": [
+
+    ],
+    "imageThumb": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820489",
+    "imageHeader": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820673"
+  },
+  {
+    "id": 38,
+    "name": "Telefones e Celulares",
+    "departments": [
+
+    ],
+    "imageThumb": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820495",
+    "imageHeader": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820679"
+  },
+  {
+    "id": 56,
+    "name": "Informática",
+    "departments": [
+
+    ],
+    "imageThumb": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820493",
+    "imageHeader": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820677"
+  },
+  {
+    "id": 73,
+    "name": "Eletroportáteis",
+    "departments": [
+
+    ],
+    "imageThumb": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820491",
+    "imageHeader": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820675"
+  },
+  {
+    "id": 93,
+    "name": "Móveis",
+    "departments": [
+
+    ],
+    "imageThumb": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820494",
+    "imageHeader": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820678"
+  },
+  {
+    "id": 102,
+    "name": "Beleza e Saúde",
+    "departments": [
+
+    ],
+    "imageThumb": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820488",
+    "imageHeader": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820672"
+  },
+  {
+    "id": 336,
+    "name": "Games",
+    "departments": [
+
+    ],
+    "imageThumb": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820492",
+    "imageHeader": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820676"
+  },
+  {
+    "id": 371,
+    "name": "Utilidades Domésticas",
+    "departments": [
+
+    ],
+    "imageThumb": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820497",
+    "imageHeader": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1038820681"
+  },
+  {
+    "id": 418,
+    "name": "Esporte e Lazer",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 448,
+    "name": "Calçados",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 484,
+    "name": "Livros",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 827,
+    "name": "Ferramentas",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 836,
+    "name": "Automotivo",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 977,
+    "name": "Brinquedos",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 983,
+    "name": "Bebês",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 1017,
+    "name": "Agro, Indústria e Comércio",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 1639,
+    "name": "Papelaria",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 1732,
+    "name": "Cama, Mesa e Banho",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 1733,
+    "name": "Relógios",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 1734,
+    "name": "Moda",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 1813,
+    "name": "Malas e Mochilas",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 1886,
+    "name": "Perfumaria",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 2031,
+    "name": "Tablets",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 2168,
+    "name": "Joias e Bijuterias",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 2285,
+    "name": "Produtos de Limpeza",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 2294,
+    "name": "Pet Shop",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 2339,
+    "name": "Alimentos",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 2471,
+    "name": "Instrumentos Musicais",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 2547,
+    "name": "Casa e Construção",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 2596,
+    "name": "Bebidas",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 2809,
+    "name": "Ar e Ventilação",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 2894,
+    "name": "Artigos para Festas",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 3279,
+    "name": "Áudio",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 3285,
+    "name": "Acessórios e Inovações",
+    "departments": [
+
+    ]
+  },
+  {
+    "id": 3359,
+    "name": "Decoração",
+    "departments": [
+
+    ]
+  }
+]

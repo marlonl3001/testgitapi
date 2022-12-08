@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="repository"
+            type="br.com.mdr.base.domain.GitRepository"/>
+
+        <variable
+            name="hasSite"
+            type="Boolean"/>
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navigationIcon="@drawable/ic_arrow_back"
+                app:navigationIconTint="@color/white"
+                app:title="@{repository.owner.login}"
+                app:titleTextColor="@color/white"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin16">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin8">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgOwner"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginEnd="@dimen/margin8"
+                        app:circleImageUrl="@{repository.owner.avatarUrl}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtFullName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin8"
+                        android:text="@{repository.fullName}"
+                        app:layout_constraintStart_toEndOf="@id/imgOwner"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/imgOwner"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@{repository.name}"
+                        app:layout_constraintStart_toStartOf="@id/txtFullName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txtFullName"/>
+
+                    <View
+                        android:id="@+id/viewLine1"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="@android:color/darker_gray"
+                        android:layout_marginTop="@dimen/margin16"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imgOwner"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin16"
+                        android:text="@{repository.description}"
+                        app:layout_constraintStart_toStartOf="@id/viewLine1"
+                        app:layout_constraintEnd_toEndOf="@id/viewLine1"
+                        app:layout_constraintTop_toBottomOf="@id/viewLine1"/>
+
+                    <View
+                        android:id="@+id/viewLine2"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="@android:color/darker_gray"
+                        android:layout_marginTop="@dimen/margin16"
+                        app:layout_constraintStart_toStartOf="@id/viewLine1"
+                        app:layout_constraintEnd_toEndOf="@id/viewLine1"
+                        app:layout_constraintTop_toBottomOf="@id/txtDescription"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtCreatedAt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin16"
+                        android:textStyle="bold"
+                        android:text="@string/created_at"
+                        app:layout_constraintStart_toStartOf="@id/txtDescription"
+                        app:layout_constraintTop_toBottomOf="@id/viewLine2"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtCreatedAtDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin8"
+                        android:text="@{repository.createDate}"
+                        app:layout_constraintStart_toEndOf="@id/txtCreatedAt"
+                        app:layout_constraintTop_toTopOf="@id/txtCreatedAt"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtUpdatedAt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin16"
+                        android:textStyle="bold"
+                        android:text="@string/updated_at"
+                        app:layout_constraintStart_toStartOf="@id/txtDescription"
+                        app:layout_constraintTop_toBottomOf="@id/txtCreatedAt"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtUpdatedAtDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin8"
+                        android:text="@{repository.updateDate}"
+                        app:layout_constraintStart_toEndOf="@id/txtUpdatedAt"
+                        app:layout_constraintTop_toTopOf="@id/txtUpdatedAt"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtLanguage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin16"
+                        android:textStyle="bold"
+                        android:text="@string/language"
+                        app:layout_constraintStart_toStartOf="@id/txtDescription"
+                        app:layout_constraintTop_toBottomOf="@id/txtUpdatedAtDesc"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtLanguageDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin8"
+                        android:text="@{repository.language}"
+                        app:layout_constraintStart_toEndOf="@id/txtLanguage"
+                        app:layout_constraintTop_toTopOf="@id/txtLanguage"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtSite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin16"
+                        android:textStyle="bold"
+                        android:text="@string/site"
+                        app:gone="@{!hasSite}"
+                        app:layout_constraintStart_toStartOf="@id/txtDescription"
+                        app:layout_constraintTop_toBottomOf="@id/txtLanguage"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtSiteDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin8"
+                        android:text="@{repository.homepage}"
+                        app:gone="@{!hasSite}"
+                        app:layout_constraintStart_toEndOf="@id/txtSite"
+                        app:layout_constraintTop_toTopOf="@id/txtSite"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.cardview.widget.CardView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>
